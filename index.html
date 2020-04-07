@@ -39,10 +39,7 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
-   <a-assets>
-        <a-asset-item id="laptop-obj" src="{{asset('models/laptop.obj')}}"></a-asset-item>
-        <a-asset-item id="laptop-mtl" src="{{asset('models/laptop.mtl')}}"></a-asset-item>
-    </a-assets>
+ 
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
@@ -53,7 +50,7 @@
       smoothThreshold="5"
     >
       <a-entity
-         <a-entity obj-model="obj: #laptop-obj; mtl: #laptop-mtl" >
+        gltf-model="models/laptop.glb"
         scale="5 5 5"
         position="50 150 0"
       >
