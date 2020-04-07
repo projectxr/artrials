@@ -39,6 +39,9 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+	<a-assets>
+      <video id="wedding" autoplay="true" loop="true" muted preload="auto" src="wedding.mp4"></video>
+    </a-assets>
  
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
@@ -55,6 +58,18 @@
         position="50 150 0"
 		animation-mixer="clip: ArmatureAction loop:repeat"
       >
+      </a-entity>
+    </a-nft>
+	<a-nft
+      type="nft"
+      url="https://cors-anywhere.herokuapp.com/https://projectxr.github.io/artrials/marker/weddata/wedmarker"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity scale="1 1 1" rotation="-90 0 0" crossOrigin="anonymous">
+        <a-video play-on-scan src="#wedding" crossOrigin="anonymous"></a-video>
       </a-entity>
     </a-nft>
     <a-entity camera>
